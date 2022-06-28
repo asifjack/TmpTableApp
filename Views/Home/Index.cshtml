@@ -1,0 +1,79 @@
+﻿
+
+<button class="btn btn-primary" id="btnCreate" onclick="OpenUserForm">Click Me to Create</button>
+<br />
+      <div style="display: none" id="UserFormId">
+          <form class="" action="">
+              <div class="form-group">
+                  User Name<input type="text" class="form-control" id="UserName">
+              </div>
+              <div class="form-group">
+                  Email <input type="email" class="form-control" id="Email">
+              </div>
+              <div class="form-group">
+                  Phone <input type="text" class="form-control" id="Phone">
+              </div>
+              <div class="form-group">
+                  Address <textarea type="text" class="form-control" id="Address"></textarea>
+              </div>
+
+              <input type="button" class="btn btn-primary float-right m-2" value="Add To Table" id="AddToTblId">
+              <input type="button" class="btn btn-danger float-right m-2" id="cancelBtnId" value="Cancel">
+
+          </form>
+      </div>
+       
+<br/>
+
+
+<div class="">
+
+    <table id="table_id" class="display" style="width:100%" border="1">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Asif</td>
+                <td>asif@gmail.com</td>
+                <td>8417886136</td>
+                <td>Noida</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" class="btn btn-primary float-right m-2" value="Add To DB">
+</div>
+<script>
+        $(document).ready(function () {
+            $("#btnCreate").click(function () {
+                $("#UserFormId").css('display','block');
+            })
+            $("#cancelBtnId").click(function () {
+                $("#UserFormId").css('display', 'none');
+            })
+
+            $("#AddToTblId").click(function () {
+                var UserName = $("#UserName").val();
+                var Email = $("#Email").val();
+                var Phone = $("#Phone").val();
+                var Address = $("#Address").val();
+               
+                $("#table_id tbody").append('<tr><td>'+UserName+'</td><td>'+Email+'</td><td>'+Phone+'</td><td>'+Address+'</td></tr>')
+
+            })
+
+
+
+        });
+
+
+
+    function OpenUserForm() {
+        
+    }
+</script>
